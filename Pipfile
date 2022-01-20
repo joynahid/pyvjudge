@@ -11,6 +11,7 @@ beautifulsoup4 = "*"
 black = "*"
 pytest = "*"
 flake8 = "*"
+py = "*"
 ipython = "*"
 
 [requires]
