@@ -9,6 +9,8 @@ from httpx import Client
 LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(level=logging.DEBUG)
 
+VJUDGE_BASE_URL = "https://vjudge.net"
+
 
 class VjudgeLoginError(Exception):
     def __init__(self, handle: str) -> None:
@@ -47,7 +49,7 @@ class VjudgeClient(Client):
     request_hooks = []
 
     def __init__(self, *args, **kwargs):
-        kwargs["base_url"] = kwargs.get("base_url", os.environ["VJUDGE_BASE_URL"])
+        kwargs["base_url"] = kwargs.get("base_url", VJUDGE_BASE_URL)
 
         event_hooks = {
             "request": self.register_request_hooks(),
