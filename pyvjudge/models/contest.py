@@ -17,7 +17,8 @@ class Verdict(Enum):
 class ProblemProperty:
     title: str
     content: str
-    hint: bool
+    hint: bool = None
+    spoiler: bool = None
 
 
 @dataclass
