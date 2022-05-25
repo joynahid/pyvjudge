@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
 from setuptools import setup, find_packages
+from pyvjudge import __version__
 
 setup(
       name='pyvjudge',
-      version='0.0.1',
+      version=__version__,
       python_requires=">=3.7",
       description='Python Vjudge Client',
       author='Nahid Hasan',
