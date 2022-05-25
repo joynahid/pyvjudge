@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+httpx = "*"
+beautifulsoup4 = "*"
+
+[dev-packages]
+black = "*"
+pytest = "*"
+flake8 = "*"
+py = "*"
+ipython = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
