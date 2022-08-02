@@ -11,8 +11,8 @@ from pyvjudge.vjudge.contest_scraper import ContestScraper
 from tests.conftest import ENV_VARS
 
 BASE_URL = "https://vjudge.net"
-TEST_CONTEST_ID = 476543
 
+TEST_CONTEST_IDS = [476543, 502668]
 
 class TestContestScraper(unittest.TestCase):
     def __init__(self, *args) -> None:
@@ -42,5 +42,6 @@ class TestContestScraper(unittest.TestCase):
 
             self.scraper.client.get = lambda *args, **kwargs: Response()
 
-        contest_info = self.scraper.scrape_contest_info(TEST_CONTEST_ID)
-        assert isinstance(contest_info, ContestInfo)
+        for c_id in TEST_CONTEST_IDS:
+            contest_info = self.scraper.scrape_contest_info(c_id)
+            assert isinstance(contest_info, ContestInfo)

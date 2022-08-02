@@ -54,7 +54,7 @@ class ContestScraper:
 
     @staticmethod
     def is_contest_accessible(openness: int) -> bool:
-        if openness == 0:
+        if openness == 0 or openness == 2:
             return True
         raise ContestNotAccessible()
 

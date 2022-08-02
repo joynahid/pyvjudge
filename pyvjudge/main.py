@@ -13,8 +13,8 @@ LOGGER = logging.getLogger("PyVjudge")
 
 
 class PyVjudge:
-    def __init__(self):
-        self.client = VjudgeClient()
+    def __init__(self, vjudge_client: VjudgeClient):
+        self.client = vjudge_client or VjudgeClient()
         self.contest_scraper = ContestScraper(self.client)
 
     def get_standing(self, contest_id: Union[str, int], contest_password: str = None) -> Standing:
