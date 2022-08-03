@@ -13,7 +13,7 @@ LOGGER = logging.getLogger("PyVjudge")
 
 
 class PyVjudge:
-    def __init__(self, vjudge_client: VjudgeClient):
+    def __init__(self, vjudge_client: VjudgeClient = None):
         self.client = vjudge_client or VjudgeClient()
         self.contest_scraper = ContestScraper(self.client)
 
